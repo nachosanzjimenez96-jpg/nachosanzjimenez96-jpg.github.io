@@ -3,110 +3,423 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nacho Sanz - Administrador de Sistemas</title>
+    <title>Ignacio Sanz - Administrador de Sistemas & Ciberseguridad</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
+        /* ===== RESET ===== */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #f0f2f5; color: #1a1a2e; line-height: 1.6; padding: 30px 15px; }
-        .container { max-width: 1100px; margin: 0 auto; background: white; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); padding: 45px 55px; }
-        .header { display: flex; align-items: center; gap: 35px; border-bottom: 4px solid #0a66c2; padding-bottom: 28px; margin-bottom: 30px; flex-wrap: wrap; }
-        .avatar { width: 110px; height: 110px; border-radius: 50%; background: #0a66c2; display: flex; align-items: center; justify-content: center; font-size: 42px; color: white; font-weight: 700; flex-shrink: 0; }
-        .header h1 { font-size: 34px; color: #0a66c2; }
-        .header .subtitle { font-size: 18px; color: #555; }
-        .badge-group { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px; }
-        .badge { background: #e8f0fe; color: #0a66c2; padding: 5px 14px; border-radius: 20px; font-size: 13px; font-weight: 600; }
-        .badge-azul { background: #0a66c2; color: white; }
-        .badge-verde { background: #d4edda; color: #155724; }
-        .section { margin: 32px 0; }
-        .section h2 { font-size: 22px; color: #0a66c2; border-bottom: 2px solid #e8edf5; padding-bottom: 8px; margin-bottom: 18px; }
-        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-        @media (max-width: 700px) { .two-col { grid-template-columns: 1fr; } }
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; }
-        .skill-item { background: #f8faff; padding: 10px 16px; border-radius: 10px; border-left: 4px solid #0a66c2; font-size: 14px; font-weight: 500; }
-        .skill-item strong { color: #0a66c2; }
-        .project, .exp-item { background: #f8faff; padding: 16px 22px; border-radius: 12px; margin: 12px 0; border-left: 4px solid #0a66c2; }
-        .project strong, .exp-item strong { color: #0a66c2; }
-        .exp-item .fecha { color: #888; font-size: 14px; }
-        .exp-item ul { margin: 8px 0 0 20px; list-style: none; }
-        .exp-item ul li::before { content: "▸ "; color: #0a66c2; font-weight: bold; }
-        .exp-item ul li { padding: 3px 0; font-size: 15px; }
-        .contact-links { display: flex; gap: 15px; flex-wrap: wrap; margin-top: 10px; }
-        .contact-links a { color: #0a66c2; text-decoration: none; font-weight: 500; padding: 10px 22px; background: #eef3fc; border-radius: 30px; transition: 0.25s; font-size: 15px; }
-        .contact-links a:hover { background: #0a66c2; color: white; }
-        .availability { background: #d4edda; color: #155724; padding: 16px 24px; border-radius: 14px; margin-top: 25px; font-weight: 600; text-align: center; font-size: 17px; }
-        .cert-badge { background: #fff3cd; color: #856404; padding: 6px 16px; border-radius: 20px; font-size: 14px; font-weight: 600; margin: 4px 6px 4px 0; display: inline-block; }
-        .idioma-item { background: #e8f0fe; padding: 6px 18px; border-radius: 20px; margin: 4px 6px 4px 0; font-size: 14px; display: inline-block; }
-        .tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; }
-        .tag-cloud span { background: #f0f4ff; padding: 6px 16px; border-radius: 20px; font-size: 13px; border: 1px solid #dce3ef; }
-        @media (max-width: 600px) { .container { padding: 25px; } .header { flex-direction: column; text-align: center; } .header h1 { font-size: 28px; } .badge-group { justify-content: center; } }
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: #0b0e14;
+            color: #e8edf5;
+            line-height: 1.6;
+            padding: 30px 15px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        /* ===== CONTENEDOR PRINCIPAL ===== */
+        .container {
+            max-width: 1100px;
+            width: 100%;
+            background: linear-gradient(145deg, #141a24, #1c2432);
+            border-radius: 28px;
+            padding: 50px 55px;
+            box-shadow: 0 20px 60px rgba(0, 255, 136, 0.06), 0 0 40px rgba(0, 255, 136, 0.02);
+            border: 1px solid rgba(0, 255, 136, 0.08);
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(25px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* ===== HEADER CON FOTO ===== */
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            border-bottom: 2px solid rgba(0, 255, 136, 0.15);
+            padding-bottom: 30px;
+            margin-bottom: 35px;
+            flex-wrap: wrap;
+        }
+        .avatar {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #0a66c2, #00ff88);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            color: white;
+            font-weight: 700;
+            flex-shrink: 0;
+            box-shadow: 0 0 30px rgba(0, 255, 136, 0.2);
+            overflow: hidden;
+            border: 3px solid rgba(0, 255, 136, 0.3);
+            transition: 0.3s;
+        }
+        .avatar:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 45px rgba(0, 255, 136, 0.35);
+        }
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .header h1 {
+            font-size: 36px;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+            background: linear-gradient(90deg, #ffffff, #00ff88);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .header .subtitle {
+            font-size: 18px;
+            color: #94a3b8;
+            font-weight: 400;
+        }
+        .badge-group {
+            margin-top: 12px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .badge {
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            background: rgba(0, 255, 136, 0.08);
+            color: #00ff88;
+            border: 1px solid rgba(0, 255, 136, 0.15);
+            transition: 0.3s;
+        }
+        .badge:hover {
+            background: rgba(0, 255, 136, 0.15);
+            transform: translateY(-2px);
+        }
+        .badge-azul {
+            background: rgba(10, 102, 194, 0.2);
+            color: #60a5fa;
+            border-color: rgba(96, 165, 250, 0.2);
+        }
+        .badge-verde {
+            background: rgba(0, 255, 136, 0.12);
+            color: #00ff88;
+            border-color: rgba(0, 255, 136, 0.25);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.2); }
+            50% { box-shadow: 0 0 20px rgba(0, 255, 136, 0.1); }
+        }
+        /* ===== SECCIONES ===== */
+        .section { margin: 35px 0; }
+        .section h2 {
+            font-size: 22px;
+            color: #00ff88;
+            border-bottom: 2px solid rgba(0, 255, 136, 0.1);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .section h2 i {
+            color: #00ff88;
+            font-size: 20px;
+        }
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+        }
+        @media (max-width: 750px) { .two-col { grid-template-columns: 1fr; } }
+        /* ===== SKILLS ===== */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+        }
+        .skill-item {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 12px 18px;
+            border-radius: 12px;
+            border-left: 3px solid #00ff88;
+            font-size: 14px;
+            font-weight: 500;
+            color: #c8d0dc;
+            transition: 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+        }
+        .skill-item:hover {
+            background: rgba(0, 255, 136, 0.05);
+            transform: translateX(5px);
+        }
+        .skill-item strong { color: #00ff88; }
+        /* ===== EXPERIENCIA / PROYECTOS ===== */
+        .exp-item, .project {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 18px 22px;
+            border-radius: 14px;
+            margin: 14px 0;
+            border-left: 3px solid #00ff88;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            transition: 0.3s;
+        }
+        .exp-item:hover, .project:hover {
+            background: rgba(0, 255, 136, 0.04);
+            border-color: rgba(0, 255, 136, 0.15);
+        }
+        .exp-item strong, .project strong { color: #00ff88; }
+        .exp-item .fecha {
+            color: #6b7a8f;
+            font-size: 14px;
+            font-weight: 400;
+            display: block;
+            margin-top: 4px;
+        }
+        .exp-item ul {
+            margin: 10px 0 0 20px;
+            list-style: none;
+        }
+        .exp-item ul li::before {
+            content: "▸ ";
+            color: #00ff88;
+            font-weight: bold;
+        }
+        .exp-item ul li {
+            padding: 4px 0;
+            font-size: 15px;
+            color: #c8d0dc;
+        }
+        /* ===== APTITUDES ===== */
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .tag-cloud span {
+            background: rgba(0, 255, 136, 0.06);
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 13px;
+            border: 1px solid rgba(0, 255, 136, 0.08);
+            color: #b0c4d9;
+            transition: 0.3s;
+        }
+        .tag-cloud span:hover {
+            background: rgba(0, 255, 136, 0.12);
+            color: #00ff88;
+            transform: translateY(-2px);
+        }
+        /* ===== BOTÓN DESCARGAR CV ===== */
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, #00ff88, #00cc6a);
+            color: #0b0e14;
+            padding: 14px 32px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 16px;
+            text-decoration: none;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 0 30px rgba(0, 255, 136, 0.15);
+        }
+        .btn-download:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 0 50px rgba(0, 255, 136, 0.25);
+        }
+        .btn-download i { font-size: 18px; }
+        /* ===== CONTACTO ===== */
+        .contact-links {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+            margin-top: 12px;
+        }
+        .contact-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #c8d0dc;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 40px;
+            transition: 0.3s;
+            font-size: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+        }
+        .contact-links a:hover {
+            background: rgba(0, 255, 136, 0.08);
+            color: #00ff88;
+            border-color: rgba(0, 255, 136, 0.15);
+            transform: translateY(-2px);
+        }
+        .contact-links a i { color: #00ff88; font-size: 18px; }
+        /* ===== DISPONIBILIDAD ===== */
+        .availability {
+            background: rgba(0, 255, 136, 0.05);
+            border: 1px solid rgba(0, 255, 136, 0.1);
+            color: #00ff88;
+            padding: 18px 28px;
+            border-radius: 16px;
+            margin-top: 30px;
+            font-weight: 500;
+            text-align: center;
+            font-size: 17px;
+        }
+        .availability strong { color: #ffffff; }
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 600px) {
+            .container { padding: 25px; }
+            .header { flex-direction: column; text-align: center; }
+            .header h1 { font-size: 28px; }
+            .badge-group { justify-content: center; }
+            .btn-download { width: 100%; justify-content: center; }
+            .contact-links { justify-content: center; }
+        }
+        /* ===== CIBERSEGURIDAD DESTACADA ===== */
+        .cyber-badge {
+            display: inline-block;
+            background: rgba(255, 0, 0, 0.08);
+            color: #ff6b6b;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            border: 1px solid rgba(255, 0, 0, 0.1);
+            margin-left: 8px;
+        }
     </style>
 </head>
 <body>
 <div class="container">
+
+    <!-- ===== HEADER CON FOTO ===== -->
     <div class="header">
-        <div class="avatar">NS</div>
+        <div class="avatar">
+            <!-- Si has subido la foto como perfil.jpg, se mostrará -->
+            <img src="perfil.jpg" alt="Ignacio Sanz" onerror="this.style.display='none'; this.parentElement.innerHTML='IS'">
+        </div>
         <div>
             <h1>Ignacio Sanz Jiménez</h1>
-            <div class="subtitle">Administrador de Sistemas | Cloud | Azure | Active Directory</div>
+            <div class="subtitle">Administrador de Sistemas | Cloud | Ciberseguridad</div>
             <div class="badge-group">
-                <span class="badge badge-azul">Windows Server</span>
-                <span class="badge badge-azul">Linux</span>
-                <span class="badge badge-azul">Azure</span>
-                <span class="badge badge-azul">Active Directory</span>
-                <span class="badge badge-azul">Microsoft 365</span>
-                <span class="badge badge-azul">PowerShell</span>
-                <span class="badge badge-verde">En búsqueda activa</span>
+                <span class="badge badge-azul"><i class="fas fa-server"></i> Windows Server</span>
+                <span class="badge badge-azul"><i class="fab fa-linux"></i> Linux</span>
+                <span class="badge badge-azul"><i class="fas fa-cloud"></i> Azure</span>
+                <span class="badge badge-azul"><i class="fas fa-users"></i> Active Directory</span>
+                <span class="badge badge-azul"><i class="fas fa-shield-alt"></i> Ciberseguridad</span>
+                <span class="badge badge-verde"><i class="fas fa-circle"></i> En búsqueda activa</span>
             </div>
         </div>
     </div>
-    <div class="section">
-        <h2>👨‍💻 Sobre mí</h2>
-        <p>Administrador de Sistemas y Cloud con experiencia en infraestructuras <strong>Windows</strong> y <strong>Microsoft Azure</strong>. Especializado en <strong>Active Directory</strong>, <strong>Microsoft Entra ID</strong>, <strong>Microsoft 365</strong> y soporte a entornos corporativos. Actualmente desarrollando mi carrera en administración de sistemas, cloud y ciberseguridad.</p>
+
+    <!-- ===== BOTÓN DESCARGAR CV ===== -->
+    <div style="text-align: center; margin: 25px 0 35px 0;">
+        <a href="CV_Ignacio_Sanz.pdf" download class="btn-download">
+            <i class="fas fa-file-pdf"></i> Descargar CV (PDF)
+        </a>
+        <span style="display: block; color: #6b7a8f; font-size: 13px; margin-top: 8px;">
+            <i class="fas fa-lock" style="color:#00ff88; font-size:11px;"></i> Archivo seguro · Actualizado 2026
+        </span>
     </div>
+
+    <!-- ===== SOBRE MÍ ===== -->
+    <div class="section">
+        <h2><i class="fas fa-user-shield"></i> Sobre mí</h2>
+        <p style="font-size: 16px; color: #c8d0dc; line-height: 1.9;">
+            Administrador de Sistemas y Cloud con <strong style="color:#00ff88;">+3 años de experiencia</strong> en infraestructuras 
+            <strong style="color:#ffffff;">Windows</strong> y <strong style="color:#ffffff;">Microsoft Azure</strong>. 
+            Especializado en <strong style="color:#00ff88;">Active Directory</strong>, <strong style="color:#00ff88;">Microsoft Entra ID</strong>, 
+            <strong style="color:#00ff88;">Microsoft 365</strong> y <strong style="color:#00ff88;">Ciberseguridad</strong>. 
+            Apasionado por la automatización, el hardening de sistemas y la protección de entornos corporativos.
+            <span class="cyber-badge"><i class="fas fa-shield-alt"></i> CyberSec</span>
+        </p>
+    </div>
+
+    <!-- ===== EXPERIENCIA + EDUCACIÓN ===== -->
     <div class="two-col">
         <div class="section">
-            <h2>💼 Experiencia</h2>
+            <h2><i class="fas fa-briefcase"></i> Experiencia</h2>
             <div class="exp-item">
-                <strong>Infra Transformation Associate</strong> <span class="fecha">| ACCENTURE | Ene 2025 – Abr 2026</span>
+                <strong>Infra Transformation Associate</strong>
+                <span class="fecha"><i class="far fa-calendar-alt"></i> ACCENTURE · Ene 2025 – Abr 2026</span>
                 <ul>
-                    <li>Administración y mantenimiento de infraestructura en Microsoft Azure.</li>
-                    <li>Resolución de incidencias N1/N2 mediante ServiceNow garantizando SLA.</li>
-                    <li>Administración de Active Directory (usuarios, grupos, OU y GPO).</li>
-                    <li>Aplicación de hardening básico y configuración segura de servidores Windows.</li>
-                    <li>Monitorización con Zabbix, Grafana y Azure Monitor.</li>
-                    <li>Gestión de más de 100 usuarios y soporte a 200+ usuarios.</li>
+                    <li>Administración y mantenimiento de infraestructura en <strong>Microsoft Azure</strong>.</li>
+                    <li>Resolución de incidencias N1/N2 mediante <strong>ServiceNow</strong> garantizando SLA.</li>
+                    <li>Administración de <strong>Active Directory</strong> (usuarios, grupos, OU y GPO).</li>
+                    <li>Aplicación de <strong>hardening</strong> y configuración segura de servidores Windows.</li>
+                    <li>Monitorización con <strong>Zabbix</strong>, <strong>Grafana</strong> y <strong>Azure Monitor</strong>.</li>
+                    <li>Gestión de <strong>+100 usuarios</strong> y soporte a <strong>+200 usuarios</strong>.</li>
                 </ul>
             </div>
             <div class="exp-item">
-                <strong>Técnico Electromecánico</strong> <span class="fecha">| QUALICAPS EUROPE | Abr 2020 – Dic 2023</span>
+                <strong>Técnico Electromecánico</strong>
+                <span class="fecha"><i class="far fa-calendar-alt"></i> QUALICAPS EUROPE · Abr 2020 – Dic 2023</span>
                 <ul>
                     <li>Mantenimiento preventivo y correctivo de maquinaria industrial.</li>
                     <li>Supervisión de procesos en el sector farmacéutico.</li>
                 </ul>
             </div>
         </div>
+
         <div class="section">
-            <h2>🎓 Educación</h2>
+            <h2><i class="fas fa-graduation-cap"></i> Educación</h2>
             <div class="exp-item">
-                <strong>Grado Superior en Administración de Sistemas y Redes</strong><br>
-                <span style="color:#555;">IFP Innovación en Formación Profesional</span>
-                <span class="fecha" style="display:block;">Sept 2022 – Jun 2024</span>
-                <span style="font-size:14px; color:#0a66c2;">Perfil en Ciberseguridad</span>
+                <strong>Grado Superior en Administración de Sistemas y Redes</strong>
+                <span class="fecha"><i class="far fa-calendar-alt"></i> IFP Innovación · Sept 2022 – Jun 2024</span>
+                <span style="color:#00ff88; font-size:14px;"><i class="fas fa-shield-alt"></i> Perfil en Ciberseguridad</span>
             </div>
             <div class="exp-item">
-                <strong>Grado Superior en Automoción</strong><br>
-                <span style="color:#555;">C.I.F.P. Profesor Raúl Vázquez</span>
-                <span class="fecha" style="display:block;">Sept 2015 – Jun 2018</span>
+                <strong>Grado Superior en Automoción</strong>
+                <span class="fecha"><i class="far fa-calendar-alt"></i> C.I.F.P. Profesor Raúl Vázquez · Sept 2015 – Jun 2018</span>
             </div>
-            <h2 style="margin-top:25px;">📜 Certificaciones</h2>
-            <div><span class="cert-badge">📘 AZ-900 (En preparación)</span> <span class="cert-badge">📘 SC-900 (En preparación)</span></div>
-            <h2 style="margin-top:25px;">🌍 Idiomas</h2>
-            <div><span class="idioma-item">🇪🇸 Castellano - Nativo</span> <span class="idioma-item">🇬🇧 Inglés B1</span></div>
-            <h2 style="margin-top:25px;">🚗 Permiso</h2>
-            <div><span class="idioma-item">B1 - Vehículo propio</span></div>
+
+            <h2 style="margin-top:30px; border-bottom-color: rgba(0,255,136,0.08);"><i class="fas fa-certificate"></i> Certificaciones</h2>
+            <div>
+                <span class="badge" style="background:rgba(255,215,0,0.08); color:#fbbf24; border-color:rgba(255,215,0,0.15);">
+                    <i class="fas fa-book"></i> AZ-900 (En preparación)
+                </span>
+                <span class="badge" style="background:rgba(255,215,0,0.08); color:#fbbf24; border-color:rgba(255,215,0,0.15);">
+                    <i class="fas fa-book"></i> SC-900 (En preparación)
+                </span>
+            </div>
+
+            <h2 style="margin-top:30px; border-bottom-color: rgba(0,255,136,0.08);"><i class="fas fa-language"></i> Idiomas</h2>
+            <div>
+                <span class="badge" style="background:rgba(255,255,255,0.04); color:#c8d0dc; border-color:rgba(255,255,255,0.06);">
+                    🇪🇸 Castellano - Nativo
+                </span>
+                <span class="badge" style="background:rgba(255,255,255,0.04); color:#c8d0dc; border-color:rgba(255,255,255,0.06);">
+                    🇬🇧 Inglés B1
+                </span>
+            </div>
+
+            <h2 style="margin-top:30px; border-bottom-color: rgba(0,255,136,0.08);"><i class="fas fa-car"></i> Permiso</h2>
+            <div>
+                <span class="badge" style="background:rgba(255,255,255,0.04); color:#c8d0dc; border-color:rgba(255,255,255,0.06);">
+                    B1 - Vehículo propio
+                </span>
+            </div>
         </div>
     </div>
+
+    <!-- ===== COMPETENCIAS TÉCNICAS ===== -->
     <div class="section">
-        <h2>🛠️ Competencias Técnicas</h2>
+        <h2><i class="fas fa-microchip"></i> Competencias Técnicas</h2>
         <div class="skills-grid">
             <div class="skill-item"><strong>Windows Server</strong> (2016/2019/2022)</div>
             <div class="skill-item"><strong>Active Directory</strong> · GPO · Entra ID</div>
@@ -118,35 +431,73 @@
             <div class="skill-item"><strong>Virtualización:</strong> VMware, Hyper-V</div>
             <div class="skill-item"><strong>Monitorización:</strong> Zabbix, Grafana</div>
             <div class="skill-item"><strong>Ticketing:</strong> ServiceNow, Jira</div>
-            <div class="skill-item"><strong>Seguridad:</strong> Hardening, permisos</div>
-            <div class="skill-item"><strong>Cloud Security</strong> · Firewalls</div>
+            <div class="skill-item"><strong>Ciberseguridad:</strong> Hardening, permisos, firewalls</div>
+            <div class="skill-item"><strong>Cloud Security</strong> · Zero Trust</div>
         </div>
     </div>
+
+    <!-- ===== LOGROS DESTACADOS ===== -->
     <div class="section">
-        <h2>🚀 Logros destacados</h2>
-        <div class="project"><strong>🔹 Gestión de 200+ usuarios</strong><br>Administración de Active Directory y soporte a entorno corporativo en Accenture.</div>
-        <div class="project"><strong>🔹 Automatización con PowerShell</strong><br>Scripts para gestión de usuarios, reportes automáticos y auditoría.</div>
-        <div class="project"><strong>🔹 Hardening y seguridad</strong><br>Aplicación de hardening en servidores Windows y monitorización continua.</div>
-        <div class="project"><strong>🔹 Cloud Migration</strong><br>Administración de entornos en Azure con storage, monitorización y backups.</div>
+        <h2><i class="fas fa-trophy"></i> Logros destacados</h2>
+        <div class="project">
+            <strong><i class="fas fa-users" style="color:#00ff88;"></i> Gestión de 200+ usuarios</strong>
+            <p style="color:#c8d0dc; font-size:15px; margin-top:6px;">Administración de Active Directory y soporte a entorno corporativo en Accenture.</p>
+        </div>
+        <div class="project">
+            <strong><i class="fas fa-code" style="color:#00ff88;"></i> Automatización con PowerShell</strong>
+            <p style="color:#c8d0dc; font-size:15px; margin-top:6px;">Scripts para gestión de usuarios, reportes automáticos y auditoría de permisos.</p>
+        </div>
+        <div class="project">
+            <strong><i class="fas fa-shield-alt" style="color:#00ff88;"></i> Hardening y Ciberseguridad</strong>
+            <p style="color:#c8d0dc; font-size:15px; margin-top:6px;">Aplicación de hardening en servidores Windows y monitorización continua con Zabbix.</p>
+        </div>
+        <div class="project">
+            <strong><i class="fas fa-cloud-upload-alt" style="color:#00ff88;"></i> Cloud Migration</strong>
+            <p style="color:#c8d0dc; font-size:15px; margin-top:6px;">Administración de entornos en Azure con storage, monitorización y backups.</p>
+        </div>
     </div>
+
+    <!-- ===== APTITUDES PERSONALES ===== -->
     <div class="section">
-        <h2>🧠 Aptitudes Personales</h2>
+        <h2><i class="fas fa-brain"></i> Aptitudes Personales</h2>
         <div class="tag-cloud">
-            <span>Pensamiento crítico</span> <span>Toma de decisiones</span> <span>Iniciativa y autonomía</span>
-            <span>Trabajo en equipo</span> <span>Comunicación efectiva</span> <span>Orientación a resultados</span>
-            <span>Aprendizaje continuo</span> <span>Adaptabilidad</span> <span>Creatividad</span>
+            <span><i class="fas fa-check-circle" style="color:#00ff88;"></i> Pensamiento crítico</span>
+            <span><i class="fas fa-check-circle" style="color:#00ff88;"></i> Toma de decisiones</span>
+            <span><i class="fas fa-check-circle" style="color:#00ff88;"></i> Iniciativa y autonomía</span>
+            <span><i class="fas fa-check-circle" style="color:#00ff88;"></i> Trabajo en equipo</span>
+            <span><i class="fas fa-check-circle" style="color:#00ff88;"></i> Comunicación efectiva</span>
+            <span><i class="fas fa-check-circle" style="color:#00ff88;"></i> Orientación a resultados</span>
+            <span><i class="fas fa-check-circle" style="color:#00ff88;"></i> Aprendizaje continuo</span>
+            <span><i class="fas fa-check-circle" style="color:#00ff88;"></i> Adaptabilidad</span>
+            <span><i class="fas fa-check-circle" style="color:#00ff88;"></i> Creatividad</span>
         </div>
     </div>
+
+    <!-- ===== CONTACTO ===== -->
     <div class="section">
-        <h2>📫 Contacto</h2>
+        <h2><i class="fas fa-envelope"></i> Contacto</h2>
         <div class="contact-links">
-            <a href="mailto:Nachosanzjimenez96@gmail.com">📧 Email</a>
-            <a href="tel:+34657890879">📱 657-890-879</a>
-            <a href="https://linkedin.com/in/tuusuario" target="_blank">🔗 LinkedIn</a>
-            <a href="https://github.com/nachosanzimenez96-jpg" target="_blank">🐙 GitHub</a>
+            <a href="mailto:Nachosanzjimenez96@gmail.com">
+                <i class="fas fa-envelope"></i> Email
+            </a>
+            <a href="tel:+34657890879">
+                <i class="fas fa-phone"></i> 657-890-879
+            </a>
+            <a href="https://www.linkedin.com/in/ignaciosanzjimenez" target="_blank">
+                <i class="fab fa-linkedin-in"></i> LinkedIn
+            </a>
+            <a href="https://github.com/nachosanzimenez96-jpg" target="_blank">
+                <i class="fab fa-github"></i> GitHub
+            </a>
         </div>
     </div>
-    <div class="availability">📍 Disponible en <strong>Madrid y alrededores</strong> | Régimen <strong>Híbrido</strong> | En búsqueda activa</div>
+
+    <!-- ===== DISPONIBILIDAD ===== -->
+    <div class="availability">
+        <i class="fas fa-map-marker-alt" style="margin-right:10px;"></i>
+        Disponible en <strong>Madrid y alrededores</strong> · Régimen <strong>Híbrido</strong> · <i class="fas fa-shield-alt" style="margin:0 6px;"></i> En búsqueda activa
+    </div>
+
 </div>
 </body>
 </html>
