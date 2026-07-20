@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Nacho Sanz - Administrador de Sistemas</title>
+    <meta name="description" content="Administrador de Sistemas con experiencia en Windows Server, Linux, Azure, Active Directory y Microsoft 365."/>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: #f0f2f5;
+            color: #1a1a2e;
+            line-height: 1.6;
+            padding: 30px 15px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            padding: 45px 55px;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+            border-bottom: 4px solid #0a66c2;
+            padding-bottom: 28px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .avatar {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            background: #0a66c2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 42px;
+            color: white;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .header h1 { font-size: 34px; color: #0a66c2; }
+        .header .subtitle { font-size: 18px; color: #555; }
+        .badge-group { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px; }
+        .badge {
+            background: #e8f0fe;
+            color: #0a66c2;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        .badge-azul { background: #0a66c2; color: white; }
+        .badge-verde { background: #d4edda; color: #155724; }
+        .section { margin: 32px 0; }
+        .section h2 {
+            font-size: 22px;
+            color: #0a66c2;
+            border-bottom: 2px solid #e8edf5;
+            padding-bottom: 8px;
+            margin-bottom: 18px;
+        }
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        @media (max-width: 700px) { .two-col { grid-template-columns: 1fr; } }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 10px;
+        }
+        .skill-item {
+            background: #f8faff;
+            padding: 10px 16px;
+            border-radius: 10px;
+            border-left: 4px solid #0a66c2;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .skill-item strong { color: #0a66c2; }
+        .project, .exp-item {
+            background: #f8faff;
+            padding: 16px 22px;
+            border-radius: 12px;
+            margin: 12px 0;
+            border-left: 4px solid #0a66c2;
+        }
+        .project strong, .exp-item strong { color: #0a66c2; }
+        .exp-item .fecha { color: #888; font-size: 14px; }
+        .exp-item ul { margin: 8px 0 0 20px; list-style: none; }
+        .exp-item ul li::before { content: "▸ "; color: #0a66c2; font-weight: bold; }
+        .exp-item ul li { padding: 3px 0; font-size: 15px; }
+        .contact-links { display: flex; gap: 15px; flex-wrap: wrap; margin-top: 10px; }
+        .contact-links a {
+            color: #0a66c2;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 22px;
+            background: #eef3fc;
+            border-radius: 30px;
+            transition: 0.25s;
+            font-size: 15px;
+        }
+        .contact-links a:hover { background: #0a66c2; color: white; }
+        .availability {
+            background: #d4edda;
+            color: #155724;
+            padding: 16px 24px;
+            border-radius: 14px;
+            margin-top: 25px;
+            font-weight: 600;
+            text-align: center;
+            font-size: 17px;
+        }
+        .cert-badge {
+            background: #fff3cd;
+            color: #856404;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin: 4px 6px 4px 0;
+            display: inline-block;
+        }
+        .idioma-item {
+            background: #e8f0fe;
+            padding: 6px 18px;
+            border-radius: 20px;
+            margin: 4px 6px 4px 0;
+            font-size: 14px;
+            display: inline-block;
+        }
+        .tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; }
+        .tag-cloud span {
+            background: #f0f4ff;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            border: 1px solid #dce3ef;
+        }
+        @media (max-width: 600px) {
+            .container { padding: 25px; }
+            .header { flex-direction: column; text-align: center; }
+            .header h1 { font-size: 28px; }
+            .badge-group { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <div class="header">
+        <div class="avatar">NS</div>
+        <div>
+            <h1>Ignacio Sanz Jiménez</h1>
+            <div class="subtitle">Administrador de Sistemas | Cloud | Azure | Active Directory</div>
+            <div class="badge-group">
+                <span class="badge badge-azul">Windows Server</span>
+                <span class="badge badge-azul">Linux</span>
+                <span class="badge badge-azul">Azure</span>
+                <span class="badge badge-azul">Active Directory</span>
+                <span class="badge badge-azul">Microsoft 365</span>
+                <span class="badge badge-azul">PowerShell</span>
+                <span class="badge badge-verde">En búsqueda activa</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>👨‍💻 Sobre mí</h2>
+        <p>Administrador de Sistemas y Cloud con experiencia en infraestructuras <strong>Windows</strong> y <strong>Microsoft Azure</strong>. Especializado en <strong>Active Directory</strong>, <strong>Microsoft Entra ID</strong>, <strong>Microsoft 365</strong> y soporte a entornos corporativos. Actualmente desarrollando mi carrera en administración de sistemas, cloud y ciberseguridad.</p>
+    </div>
+
+    <div class="two-col">
+        <div class="section">
+            <h2>💼 Experiencia</h2>
+            <div class="exp-item">
+                <strong>Infra Transformation Associate</strong>
+                <span class="fecha">| ACCENTURE | Ene 2025 – Abr 2026</span>
+                <ul>
+                    <li>Administración y mantenimiento de infraestructura en Microsoft Azure.</li>
+                    <li>Resolución de incidencias N1/N2 mediante ServiceNow garantizando SLA.</li>
+                    <li>Administración de Active Directory (usuarios, grupos, OU y GPO).</li>
+                    <li>Aplicación de hardening básico y configuración segura de servidores Windows.</li>
+                    <li>Monitorización con Zabbix, Grafana y Azure Monitor.</li>
+                    <li>Gestión de más de 100 usuarios y soporte a 200+ usuarios.</li>
+                </ul>
+            </div>
+            <div class="exp-item">
+                <strong>Técnico Electromecánico</strong>
+                <span class="fecha">| QUALICAPS EUROPE | Abr 2020 – Dic 2023</span>
+                <ul>
+                    <li>Mantenimiento preventivo y correctivo de maquinaria industrial.</li>
+                    <li>Supervisión de procesos en el sector farmacéutico.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎓 Educación</h2>
+            <div class="exp-item">
+                <strong>Grado Superior en Administración de Sistemas y Redes</strong><br>
+                <span style="color:#555;">IFP Innovación en Formación Profesional</span>
+                <span class="fecha" style="display:block;">Sept 2022 – Jun 2024</span>
+                <span style="font-size:14px; color:#0a66c2;">Perfil en Ciberseguridad</span>
+            </div>
+            <div class="exp-item">
+                <strong>Grado Superior en Automoción</strong><br>
+                <span style="color:#555;">C.I.F.P. Profesor Raúl Vázquez</span>
+                <span class="fecha" style="display:block;">Sept 2015 – Jun 2018</span>
+            </div>
+            <h2 style="margin-top:25px;">📜 Certificaciones</h2>
+            <div>
+                <span class="cert-badge">📘 AZ-900 (En preparación)</span>
+                <span class="cert-badge">📘 SC-900 (En preparación)</span>
+            </div>
+            <h2 style="margin-top:25px;">🌍 Idiomas</h2>
+            <div>
+                <span class="idioma-item">🇪🇸 Castellano - Nativo</span>
+                <span class="idioma-item">🇬🇧 Inglés B1</span>
+            </div>
+            <h2 style="margin-top:25px;">🚗 Permiso</h2>
+            <div><span class="idioma-item">B1 - Vehículo propio</span></div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🛠️ Competencias Técnicas</h2>
+        <div class="skills-grid">
+            <div class="skill-item"><strong>Windows Server</strong> (2016/2019/2022)</div>
+            <div class="skill-item"><strong>Active Directory</strong> · GPO · Entra ID</div>
+            <div class="skill-item"><strong>Linux</strong> (Debian/Ubuntu/Red Hat)</div>
+            <div class="skill-item"><strong>Microsoft Azure</strong> (IaaS, Storage, Monitor)</div>
+            <div class="skill-item"><strong>Microsoft 365</strong> (Exchange, SharePoint)</div>
+            <div class="skill-item"><strong>PowerShell</strong> · <strong>Ansible</strong></div>
+            <div class="skill-item"><strong>Redes:</strong> TCP/IP, DNS, DHCP, VPN</div>
+            <div class="skill-item"><strong>Virtualización:</strong> VMware, Hyper-V</div>
+            <div class="skill-item"><strong>Monitorización:</strong> Zabbix, Grafana</div>
+            <div class="skill-item"><strong>Ticketing:</strong> ServiceNow, Jira</div>
+            <div class="skill-item"><strong>Seguridad:</strong> Hardening, permisos</div>
+            <div class="skill-item"><strong>Cloud Security</strong> · Firewalls</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🚀 Logros destacados</h2>
+        <div class="project"><strong>🔹 Gestión de 200+ usuarios</strong><br>Administración de Active Directory y soporte a entorno corporativo en Accenture.</div>
+        <div class="project"><strong>🔹 Automatización con PowerShell</strong><br>Scripts para gestión de usuarios, reportes automáticos y auditoría.</div>
+        <div class="project"><strong>🔹 Hardening y seguridad</strong><br>Aplicación de hardening en servidores Windows y monitorización continua.</div>
+        <div class="project"><strong>🔹 Cloud Migration</strong><br>Administración de entornos en Azure con storage, monitorización y backups.</div>
+    </div>
+
+    <div class="section">
+        <h2>🧠 Aptitudes Personales</h2>
+        <div class="tag-cloud">
+            <span>Pensamiento crítico</span>
+            <span>Toma de decisiones</span>
+            <span>Iniciativa y autonomía</span>
+            <span>Trabajo en equipo</span>
+            <span>Comunicación efectiva</span>
+            <span>Orientación a resultados</span>
+            <span>Aprendizaje continuo</span>
+            <span>Adaptabilidad</span>
+            <span>Creatividad</span>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>📫 Contacto</h2>
+        <div class="contact-links">
+            <a href="mailto:Nachosanzjimenez96@gmail.com">📧 Email</a>
+            <a href="tel:+34657890879">📱 657-890-879</a>
+            <a href="https://linkedin.com/in/tuusuario" target="_blank">🔗 LinkedIn</a>
+            <a href="https://github.com/nachosanzimenez96-jpg" target="_blank">🐙 GitHub</a>
+        </div>
+    </div>
+
+    <div class="availability">
+        📍 Disponible en <strong>Madrid y alrededores</strong> | Régimen <strong>Híbrido</strong> | En búsqueda activa
+    </div>
+
+</div>
+</body>
+</html>
